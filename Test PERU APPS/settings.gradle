@@ -1,0 +1,2 @@
+include ':app', ':entity', ':repository', ':usecases'
+rootProject.name='TestPeruApps'

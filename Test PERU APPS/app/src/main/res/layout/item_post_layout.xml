@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.example.entity.Post" />
+    </data>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cviPost"
+            app:elevation="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+                <TextView
+                    android:id="@+id/tviTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{item.title}"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Name" />
+
+                <TextView
+                    android:id="@+id/tviDiscount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    tools:text="Hasta 40%"
+                    android:text="@{item.body}"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/tviTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tviTitle" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:numStars="5"
+                    android:rating="4"
+                    android:progressTint="#F3AA00"
+                    app:layout_constraintStart_toStartOf="@+id/tviTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tviDiscount" />
+
+                <TextView
+                    android:id="@+id/tviExpires"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Vence 10/05/2019"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/tviTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+</layout>
